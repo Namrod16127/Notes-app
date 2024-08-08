@@ -102,7 +102,7 @@ export default function SignUp() {
             </button>
             <p className="font-semibold text-sm text-center mt-4">
               Already have an account? &nbsp;
-              <Link to="/login" className="font-semibold text-primary underline">
+              <Link to="/" className="font-semibold text-primary underline">
                 Login
               </Link>
             </p>
