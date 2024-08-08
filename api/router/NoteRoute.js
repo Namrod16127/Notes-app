@@ -3,7 +3,6 @@ import {
   createNote, 
   getNote,
   deleteNote,
-  searchNote,
   updateNote,
   getAllNotes,
   updateIsPinned,
@@ -11,7 +10,6 @@ import {
 import { authenticatedToken } from "../midleware/verifyToken.js";
 
 const router = express.Router();
-
 router.route('/add-note').post(authenticatedToken ,createNote);
 router.route('/:id').get(getNote)
 router.route('/delete-note/:id').delete(authenticatedToken, deleteNote);

@@ -48,51 +48,6 @@ export const getNote = async(req, res) => {
   return res.json({ note });
 }
 
-export const searchNote = async(req, res) => {
-  const { query }= req.query;
-
-  const or = query 
-  ? {
-    OR: [
-      {title: {
-        contains: query
-      }},
-      {content: {
-        contains: query
-      }},
-    ]
-  }
-  : {}
-
-  if (!query) {
-    return res.status(400).json({
-      error: true,
-      message: "Search query required",
-    })
-  }
-  
-  try {
-    const notes = await prisma.note.findMany({
-      where: {
-       ...or,
-      },
-    });
-
-    res.json({
-      error: false,
-      notes,
-      message: "Notes matching the search query found",
-    });
-
-  } catch (error){
-    console.log(error);
-    res.status(500).json({
-      error: true,
-      message: "No search results found"
-    });
-  }
-}
-
 export const deleteNote = async(req, res) => {
   const note_id = req.params.id;
 
