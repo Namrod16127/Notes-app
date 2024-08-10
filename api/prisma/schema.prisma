@@ -32,5 +32,6 @@ model Note {
   isPinned  Boolean  @default(false)
   createdOn DateTime @default(now())
   userId    String   @db.ObjectId
+  name      String
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

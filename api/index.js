@@ -7,7 +7,9 @@ import noteRoutes from "./router/NoteRoute.js"
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "*",
+}));
 
 
 app.use("/api/v1/note", noteRoutes);

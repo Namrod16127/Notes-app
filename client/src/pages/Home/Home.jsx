@@ -144,6 +144,7 @@ const showToastMessage = (message, type) => {
                 content={note.content}
                 tags={note.tags}
                 isPinned={note.isPinned}
+                user={note.user.name}
                 onEdit={() => handleEdit(note)}
                 onDelete={() => deleteNote(note)}
                 onPinNote={() => updateIsPinned(note)}

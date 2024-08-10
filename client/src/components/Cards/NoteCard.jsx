@@ -6,7 +6,8 @@ export default function NoteCard({
   title, 
   date, 
   content, 
-  tags, 
+  tags,
+  user, 
   isPinned, 
   onEdit, 
   onDelete, 
@@ -39,6 +40,9 @@ export default function NoteCard({
             onClick={onDelete}
           />
         </div>
+      </div>
+      <div className="text-xs text-blue-400">
+        @{user}
       </div>
     </div>
   )

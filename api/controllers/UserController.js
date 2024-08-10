@@ -30,7 +30,7 @@ export const registerUser = async(req, res) => {
   });
 
 
-  const accessToken = jwt.sign({ userId: createdUser.id }, process.env.JWT_SECRET, {
+  const accessToken = jwt.sign({ createdUser }, process.env.JWT_SECRET, {
     expiresIn: "1d",
     }
   )
@@ -39,7 +39,7 @@ export const registerUser = async(req, res) => {
     error: false,
     user: createdUser,
     accessToken,
-    message: "Registration Successful"
+    message: "Registration Successful. Please login"
   })
 }
 
