@@ -1,4 +1,4 @@
-import express from "express";
+import express, { query } from "express";
 import {
   createNote, 
   getNote,
@@ -11,7 +11,7 @@ import { authenticatedToken } from "../midleware/verifyToken.js";
 
 const router = express.Router();
 router.route('/add-note').post(authenticatedToken ,createNote);
-router.route('/:id').get(getNote)
+router.route('/:id').get(getNote);
 router.route('/delete-note/:id').delete(authenticatedToken, deleteNote);
 router.route('/edit-note/:id').put(authenticatedToken, updateNote);
 router.route('/update-note-pinned/:id').put(authenticatedToken, updateIsPinned);

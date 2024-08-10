@@ -20,6 +20,8 @@ model User {
   password  String
   createdOn DateTime @default(now())
   notes     Note[]
+
+  @@unique([email])
 }
 
 model Note {

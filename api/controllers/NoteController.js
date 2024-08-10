@@ -48,6 +48,7 @@ export const getNote = async(req, res) => {
   return res.json({ note });
 }
 
+
 export const deleteNote = async(req, res) => {
   const note_id = req.params.id;
 

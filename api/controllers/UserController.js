@@ -12,7 +12,9 @@ export const registerUser = async(req, res) => {
   const hashedPassword = await bcrypt.hash(password, salt);
 
   const user = await prisma.user.findUnique({
-    where: { name, email },
+    where: { 
+      email, 
+    },
   });
 
   if (user) {
