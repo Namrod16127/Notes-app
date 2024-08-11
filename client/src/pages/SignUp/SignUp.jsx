@@ -11,6 +11,7 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  
 
   const navigate = useNavigate();
 
@@ -47,9 +48,12 @@ export default function SignUp() {
         return
       }
 
-      if (response.data && response.data.accessToken) {
-        localStorage.setItem("token", response.data.accessToken)
-        navigate("/dashboard");
+      // if (response.data && response.data.accessToken) {
+      //   localStorage.setItem("token", response.data.accessToken)
+      //   navigate("/dashboard");
+      // }
+      if (response.data) {
+        navigate("/");
       }
 
 

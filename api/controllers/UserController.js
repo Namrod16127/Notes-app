@@ -30,16 +30,17 @@ export const registerUser = async(req, res) => {
   });
 
   if (createdUser) {
-    const accessToken = jwt.sign({ createdUser }, process.env.JWT_SECRET, {
-      expiresIn: "1d",
-      }
-    )
-
     return res.status(201).json({
-      error: false,
+      error: true,
       user: createdUser,
-      accessToken,
       message: "Registration Successful. Please login"
+    })
+  }
+
+  else {
+    return res.status(400).json({
+      error: true,
+      message: "Something went wrong. Please try again"
     })
   }
   
