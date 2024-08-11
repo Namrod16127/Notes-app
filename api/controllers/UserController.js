@@ -36,16 +36,6 @@ export const registerUser = async(req, res) => {
       message: "Registration Successful. Please login"
     })
   }
-
-  else {
-    return res.status(400).json({
-      error: true,
-      message: "Something went wrong. Please try again"
-    })
-  }
-  
-
- 
 }
 
 
