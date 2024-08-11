@@ -29,11 +29,15 @@ export const registerUser = async(req, res) => {
     },
   });
 
+  const payload = {
+    userId : createdUser.id
+  }
 
-  const accessToken = jwt.sign({ createdUser }, process.env.JWT_SECRET, {
+  const accessToken = jwt.sign({ payload }, process.env.JWT_SECRET, {
     expiresIn: "1d",
     }
   )
+  
 
   return res.status(201).json({
     error: false,
