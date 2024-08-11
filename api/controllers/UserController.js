@@ -31,7 +31,7 @@ export const registerUser = async(req, res) => {
 
   if (createdUser) {
     return res.status(201).json({
-      error: true,
+      error: false,
       user: createdUser,
       message: "Registration Successful. Please login"
     })

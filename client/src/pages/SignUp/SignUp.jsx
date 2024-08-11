@@ -52,7 +52,7 @@ export default function SignUp() {
       //   localStorage.setItem("token", response.data.accessToken)
       //   navigate("/dashboard");
       // }
-      if (response.data) {
+      if (response.data && error.response.data.message) {
         navigate("/");
       }
 
@@ -111,6 +111,7 @@ export default function SignUp() {
               </Link>
             </p>
             </form>
+            
           </div>
         </div>
       </>
