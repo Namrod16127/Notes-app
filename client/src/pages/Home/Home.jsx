@@ -129,7 +129,7 @@ const showToastMessage = (message, type) => {
     <>
       <Navbar user={user} />
 
-      <div className="container mx-auto">
+      <div className="container mx-auto h-[600px] overflow-scroll">
         {
         allNotes.length > 0 
           ?

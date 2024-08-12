@@ -169,6 +169,11 @@ export const getAllNotes = async(req, res) => {
       include: {
         user: true,
       },
+      orderBy: [
+        {
+          createdOn: "desc"
+        },
+      ],
     });
   
     return res.json({ 

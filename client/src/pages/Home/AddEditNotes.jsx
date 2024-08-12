@@ -80,7 +80,7 @@ export default function AddEditNotes({ noteData, type, getAllNotes, onClose, sho
 
 
   return (
-    <div className='relative'>
+    <div className='relative h-[350px] md:h-[400px] lg:h-[500px]'>
 
     <button 
       className='w-10 h-10 rounded-full flex items-center justify-center
