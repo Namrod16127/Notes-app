@@ -97,7 +97,7 @@ export default function AddEditNotes({ noteData, type, getAllNotes, onClose, sho
         <input 
           type="text"
           className='text-2xl font-semibold text-slate-950 outline-none bg-slate-100 p-2' 
-          placeholder='Go to Gym At 5'
+          placeholder='Note Title'
           value={title}
           onChange={({ target }) => setTitle(target.value)}
         />
